@@ -1,0 +1,19 @@
+Alloy Model
+
+sig Train {}
+
+abstract sig State {}
+one sig Open, Closed extends State {}
+
+sig Barrier {
+  state: one State
+}
+
+Safety Constraint:
+If a train exists, barrier must be closed.
+
+fact Safety {
+  no Train implies Barrier.state != Open
+}
+
+run {} for 5
