@@ -1,0 +1,17 @@
+SRCCS State Model
+
+Variables:
+- trainDetected : Boolean
+- barrier : {open, closed}
+- systemState : {Idle, Approaching, Closed, Emergency}
+
+Initial State:
+- systemState = Idle
+- barrier = open
+- trainDetected = false
+
+Safety Invariant:
+If trainDetected = TRUE then barrier = closed
+
+Explanation:
+This ensures the system never reaches an unsafe state.
