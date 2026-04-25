@@ -1,0 +1,7 @@
+SRCCS – Refined Requirements
+R1: The system shall detect a train when distance ≤ 100 meters.
+R2: The barrier shall close within 5 seconds of train detection.
+R3: Warning lights and alarms shall activate before barrier closure.
+R4: The barrier shall remain closed until the train completely passes.
+R5: The barrier shall never be open when a train is detected.
+R6: The system shall allow emergency override.
