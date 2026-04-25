@@ -1,0 +1,21 @@
+Verification Log
+
+Req ID: R1
+Method: Z
+Result: PASS
+Notes: Barrier closed when train detected
+
+Req ID: R2
+Method: VDM
+Result: PASS
+Notes: Correct detection and control logic
+
+Req ID: R3
+Method: Alloy
+Result: PASS
+Notes: No unsafe state found
+
+Reasoning:
+Z ensures safety invariant.
+VDM ensures correct behavior.
+Alloy checks all possible states.
