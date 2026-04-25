@@ -1,17 +1,41 @@
-SRCCS State Model
+SRCCS
+════════════════════════════════════════════════════
 
-Variables:
-- trainDetected : Boolean
-- barrier : {open, closed}
-- systemState : {Idle, Approaching, Closed, Emergency}
+[STATE]
 
-Initial State:
-- systemState = Idle
-- barrier = open
-- trainDetected = false
+Barrier ::= open | closed
+SystemState ::= Idle | Approaching | Closed | Emergency
 
-Safety Invariant:
-If trainDetected = TRUE then barrier = closed
+SRCCSState
+════════════════════════════════════════════════════
+trainDetected : ℙ BOOLEAN
+barrier       : Barrier
+systemState   : SystemState
 
-Explanation:
-This ensures the system never reaches an unsafe state.
+════════════════════════════════════════════════════
+[INITIAL STATE]
+
+InitSRCCSState
+════════════════════════════════════════════════════
+SRCCSState
+
+barrier = open
+systemState = Idle
+trainDetected = false
+
+════════════════════════════════════════════════════
+[SAFETY INVARIANT]
+
+SafetyInvariant
+════════════════════════════════════════════════════
+SRCCSState
+
+∀ t : BOOLEAN •
+    (t = TRUE ⇒ barrier = closed)
+
+════════════════════════════════════════════════════
+[EXPLANATION]
+
+This invariant ensures that whenever a train is detected,
+the barrier must be in the closed state, preventing any unsafe
+crossing condition.
