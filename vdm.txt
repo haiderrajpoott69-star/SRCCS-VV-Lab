@@ -1,0 +1,18 @@
+VDM Functional Specification
+
+Function: detectTrain(distance)
+Input: distance (number)
+Output: boolean
+
+Logic:
+If distance ≤ 100 → return true
+Else → return false
+
+
+Function: controlBarrier(trainDetected)
+Input: boolean
+Output: barrier state
+
+Logic:
+If trainDetected = true → closed
+Else → open
