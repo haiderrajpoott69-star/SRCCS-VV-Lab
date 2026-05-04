@@ -1,5 +1,3 @@
-Alloy Model
-
 sig Train {}
 
 abstract sig State {}
@@ -9,11 +7,10 @@ sig Barrier {
   state: one State
 }
 
-Safety Constraint:
-If a train exists, barrier must be closed.
+sig Sensor {}
 
 fact Safety {
-  no Train implies Barrier.state != Open
+  some Train implies Barrier.state = Closed
 }
 
 run {} for 5
